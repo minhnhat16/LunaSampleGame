@@ -1,0 +1,233 @@
+{
+    "version": "1.0.0",
+    "packageId": "com.DefaultCompany.2DLunaGame",
+    "unity": {
+        "scripts": {
+            "excludes": [
+                "Assets/Scripts/InterstitialAdsScript.cs",
+                "Assets/InterstitialAdsScript.cs",
+                "**/Editor/",
+                "**/Luna/RuntimeScripts/"
+            ],
+            "useMSBuild": true,
+            "msbuildMac64": "/Library/Frameworks/Mono.framework/Versions/Current/bin/msbuild",
+            "msbuildWin64": "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe",
+            "externalSources": [],
+            "externalJSLibraries": [],
+            "scriptingDefines": []
+        },
+        "assets": {
+            "export": [
+                "scenes"
+            ],
+            "excludes": [
+                "**/Editor/"
+            ],
+            "includes": []
+        },
+        "scenes": [
+            "Assets/Scenes/SampleScene.unity"
+        ],
+        "startupScene": 0,
+        "packages": {
+            "default": {
+                "applicationName": "",
+                "iosLink": "",
+                "androidLink": "",
+                "orientation": "unspecified",
+                "supportedLanguages": [
+                    "en"
+                ]
+            },
+            "develop": {
+                "email": "",
+                "signature": ""
+            },
+            "ironsource": {
+                "applicationGenre": "",
+                "versionName": "",
+                "apiType": 1,
+                "playableMode": 0,
+                "packageType": 0
+            },
+            "facebook": {
+                "assetID": "",
+                "packageType": 0
+            }
+        },
+        "preloader": {
+            "active": true,
+            "icon": "Assets/Pre-Loader/lunaicon.png",
+            "background": "Assets/Pre-Loader/pre-loader.png"
+        },
+        "autoInstantiatePrefabs": true,
+        "removeShadows": false,
+        "minify": true,
+        "compressResources": true,
+        "compressType": 0,
+        "eliminateDeadCode": true,
+        "genericCheck": false,
+        "disableAntiAliasing": false,
+        "roots": [
+            "UnityEngine.Physics",
+            "UnityEngine.EventSystems.PointerEventData",
+            "UnityEngine.UI.GraphicRaycaster",
+            "LunaUnity.Objects.Handlers.Base",
+            "UnityEngine.UI.RawImage",
+            "UnityEngine.UI.Image",
+            "UnityEngine.UI.Text",
+            "UnityEngine.CanvasGroup",
+            "Luna.Unity.Playable",
+            "UnityEngine.Time",
+            "UnityEngine.LayerMask",
+            "UnityEngine.SceneManagement.LoadSceneMode",
+            "UnityEngine.LightmapSettings",
+            "UnityEngine.EventSystems.IPointerEnterHandler",
+            "UnityEngine.EventSystems.IPointerExitHandler",
+            "UnityEngine.EventSystems.IPointerDownHandler",
+            "UnityEngine.EventSystems.IPointerUpHandler",
+            "UnityEngine.EventSystems.IPointerClickHandler",
+            "UnityEngine.EventSystems.IScrollHandler",
+            "UnityEngine.EventSystems.IBeginDragHandler",
+            "UnityEngine.EventSystems.IDragHandler",
+            "UnityEngine.EventSystems.IEndDragHandler",
+            "UnityEngine.RigidbodyConstraints2D",
+            "UnityEngine.RigidbodyType2D",
+            "UnityEngine.Collision2D",
+            "UnityEngine.Rendering.CompareFunction",
+            "Luna.Unity.DTO.UnityEngine.Assets.Shader+ShaderParameterType",
+            "UnityEngine.Rendering.CullMode",
+            "UnityEngine.Rendering.BlendMode",
+            "UnityEngine.Rendering.BlendOp",
+            "UnityEngine.TextAsset",
+            "UnityEngine.Rendering.StencilOp",
+            "TMPro._HorizontalAlignmentOptions",
+            "TMPro.TagUnits"
+        ],
+        "stubberData": {
+            "SDKName": "",
+            "Namespace": "",
+            "className": "",
+            "generateInternals": false
+        },
+        "playerPrefs": true
+    },
+    "assets": {
+        "rules": {
+            "texture": {
+                "default": {
+                    "maxWidth": 2048,
+                    "maxHeight": 2048,
+                    "format": "default",
+                    "compression": "none",
+                    "quality": 80,
+                    "script": "",
+                    "ext": ""
+                },
+                "overrides": [
+                    {
+                        "maxWidth": 1024,
+                        "maxHeight": 1024,
+                        "format": "png32",
+                        "compression": "quantQuality",
+                        "quality": 80,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/Luna Essentials/"
+                    },
+                    {
+                        "maxWidth": 1024,
+                        "maxHeight": 1024,
+                        "format": "png32",
+                        "compression": "quantQuality",
+                        "quality": 80,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/UI/Icons/Windows.png"
+                    },
+                    {
+                        "maxWidth": 2048,
+                        "maxHeight": 2048,
+                        "format": "png32",
+                        "compression": "quantQuality",
+                        "quality": 80,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/Character sprites/"
+                    },
+                    {
+                        "maxWidth": 1024,
+                        "maxHeight": 1024,
+                        "format": "default",
+                        "compression": "none",
+                        "quality": 80,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/Environment/"
+                    },
+                    {
+                        "maxWidth": 1024,
+                        "maxHeight": 1024,
+                        "format": "png24",
+                        "compression": "quantQuality",
+                        "quality": 80,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/UI/"
+                    },
+                    {
+                        "maxWidth": 1024,
+                        "maxHeight": 1024,
+                        "format": "png24",
+                        "compression": "quantQuality",
+                        "quality": 80,
+                        "script": "",
+                        "ext": "",
+                        "name": "Assets/UI/Icons/"
+                    }
+                ]
+            },
+            "sound": {
+                "default": {
+                    "channels": 0,
+                    "bitrate": 0,
+                    "script": "",
+                    "ext": ""
+                },
+                "overrides": []
+            },
+            "font": {
+                "default": {
+                    "data": {
+                        "alphabet": " §1234567890-=qwertyuiop[]asdfghjkl;'\\`zxcvbnm,./±!@#$%^&*()_+QWERTYUIOP{}ASDFGHJKL:\"|~ZXCVBNM<>?",
+                        "size": 128
+                    }
+                },
+                "overrides": []
+            },
+            "shader": {
+                "default": {
+                    "data": {
+                        "programs": [],
+                        "passes": [],
+                        "vp": [],
+                        "fp": []
+                    }
+                },
+                "overrides": []
+            },
+            "meshes": {
+                "default": {
+                    "halfPrecision": false
+                },
+                "overrides": []
+            },
+            "animations": {
+                "default": {
+                    "halfPrecision": false
+                },
+                "overrides": []
+            }
+        }
+    }
+}
