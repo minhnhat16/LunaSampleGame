@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
    
     private float lastPosition;
     private float maxHeight;
+    private float myCalc;
 
     public float offScreen;
 
@@ -48,6 +49,8 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
+        myCalc = Math.Abs(20f * lastPosition);
+    
         rb = GetComponent<Rigidbody2D>();
         lastPosition = transform.position.y;
         maxHeight = lastPosition;
