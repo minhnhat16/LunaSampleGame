@@ -4,8 +4,6 @@
     "unity": {
         "scripts": {
             "excludes": [
-                "Assets/Scripts/InterstitialAdsScript.cs",
-                "Assets/InterstitialAdsScript.cs",
                 "**/Editor/",
                 "**/Luna/RuntimeScripts/"
             ],
@@ -63,9 +61,9 @@
         "autoInstantiatePrefabs": true,
         "removeShadows": false,
         "minify": true,
-        "compressResources": true,
+        "compressResources": false,
         "compressType": 0,
-        "eliminateDeadCode": true,
+        "eliminateDeadCode": false,
         "genericCheck": false,
         "disableAntiAliasing": false,
         "roots": [
