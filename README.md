@@ -1,8 +1,8 @@
 # LunaSampleGame
 
-We wanted to provide the Luna commuinty with a free sample 2D game for your an introduction to Luna, to proivde an example on building Luna creatives. 
+We wanted to provide the Luna commuinty with a free sample 2D game as an introduction on building creatives with Luna Playable.
 
-This sample game includes some of our free assets used for UI elements to create the end card for this game! 
+This sample game includes some of [our free assets](https://github.com/LunaCommunity/Luna-Free-Assets) used for UI elements to create the end card for this game! 
 
 You can check out our Free assets on our github community.
 
