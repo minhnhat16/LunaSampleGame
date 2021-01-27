@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Runtime.InteropServices;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+//using Luna.Unity;
 
 public class GameManager : MonoBehaviour
 {
@@ -112,6 +111,8 @@ public class GameManager : MonoBehaviour
         player.SetActive(true);
         introText.SetActive(true);
         Hand.SetActive(true);
+        //Analytics.LogEvent(Analytics.EventType.LevelStart);
+        //Analytics.LogEvent(Analytics.EventType.TutorialStarted);
     }
 
     private void Update()
@@ -131,6 +132,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(2f);
             targetObj.SetActive(false);
             oneTime = true;
+            //Analytics.LogEvent(Analytics.EventType.TutorialComplete);
         }
        
     }
@@ -141,6 +143,7 @@ public class GameManager : MonoBehaviour
         Hand.SetActive(false);
         introText.SetActive(false);
         targetObj.SetActive(false);
+        //Analytics.LogEvent(Analytics.EventType.EndCardShown);
         if (_curentCount >= maxCount)
         {
             EndGame();
@@ -154,6 +157,7 @@ public class GameManager : MonoBehaviour
     {
         _curentCount++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //Analytics.LogEvent(Analytics.EventType.LevelRetry);
         GameStart();
     }
 

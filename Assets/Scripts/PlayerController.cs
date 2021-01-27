@@ -1,6 +1,5 @@
-﻿using System;
-using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
+﻿using UnityEngine;
+//using Luna.Unity;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -61,6 +60,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y <= camera.transform.position.y - offScreen)
         {
             endGame();
+            //Analytics.LogEvent(Analytics.EventType.LevelFailed);
         }
 
         float curPos = transform.position.y - lastPosition;
