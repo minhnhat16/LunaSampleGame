@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-//using Luna.Unity;
+using Luna.Unity;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,25 +31,25 @@ public class GameManager : MonoBehaviour
     
     [Header("Playground End Card fields")]
     //Uncomment these when Luna is installed
-    //[LunaPlaygroundField("End Card Title", 0 , "End Card Details")]
+    [LunaPlaygroundField("End Card Title", 0 , "End Card Details")]
     public string title;
     //Uncomment these when Luna is installed
-    //[LunaPlaygroundField("End Card Description", 0 , "End Card Details")]
+    [LunaPlaygroundField("End Card Description", 0 , "End Card Details")]
     public string description;
     //Uncomment these when Luna is installed
-    //[LunaPlaygroundField("End Card Install Text", 0 , "End Card Details")]
+    [LunaPlaygroundField("End Card Install Text", 0 , "End Card Details")]
     public string installText;
     //Uncomment these when Luna is installed
-    //[LunaPlaygroundField("End Card Retry Text", 0 , "End Card Details")]
+    [LunaPlaygroundField("End Card Retry Text", 0 , "End Card Details")]
     public string retryText;
     //Uncomment these when Luna is installed
-    //[LunaPlaygroundField("Tutorial Text", 1, "Introduction Tutorial")]
+    [LunaPlaygroundField("Tutorial Text", 1, "Introduction Tutorial")]
     public string IntroText;
     //Uncomment these when Luna is installed
-    //[LunaPlaygroundField("Tutorial Target Text", 1, "Introduction Tutorial")]
+    [LunaPlaygroundField("Tutorial Target Text", 1, "Introduction Tutorial")]
     public string targetText;
     //Uncomment these when Luna is installed
-    //[LunaPlaygroundField("Text Colour", 2, "Change Text Colours")]
+    [LunaPlaygroundField("Text Colour", 2, "Change Text Colours")]
     public Color textColours;
     //Make sure to set the colour Alpha to 255 in inspector as its automatically set to 0
 
@@ -61,15 +61,15 @@ public class GameManager : MonoBehaviour
     
     [Header("Choose Character")]
     //Uncomment these when Luna is installed
-    //[LunaPlaygroundField("Character Cat or Dog", 3, "Character Selection")]
+    [LunaPlaygroundField("Character Cat or Dog", 3, "Character Selection")]
     public CharatcerType type;
 
     [Header("Icon Sprite")] 
     //Uncomment these when Luna is installed
-    //[LunaPlaygroundAsset("Icon Image", 4, "Change Icon")]
+    [LunaPlaygroundAsset("Icon Image", 4, "Change Icon")]
     public Texture2D iconTex;
     //Uncomment these when Luna is installed
-    //[LunaPlaygroundField("Retry Count", 5, "Number Retries")]
+    [LunaPlaygroundField("Retry Count", 5, "Number Retries")]
     public int maxCount;
 
     private static int _curentCount;
@@ -106,13 +106,14 @@ public class GameManager : MonoBehaviour
         retry.color = textColours;
     }
 
-    public void GameStart()
+    public IEnumerator GameStart()
     {
         player.SetActive(true);
         introText.SetActive(true);
         Hand.SetActive(true);
-        //Analytics.LogEvent(Analytics.EventType.LevelStart);
-        //Analytics.LogEvent(Analytics.EventType.TutorialStarted);
+        Analytics.LogEvent(Analytics.EventType.LevelStart);
+        Analytics.LogEvent(Analytics.EventType.TutorialStarted);
+        yield return null;
     }
 
     private void Update()
@@ -132,7 +133,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(2f);
             targetObj.SetActive(false);
             oneTime = true;
-            //Analytics.LogEvent(Analytics.EventType.TutorialComplete);
+            Analytics.LogEvent(Analytics.EventType.TutorialComplete);
         }
        
     }
@@ -143,7 +144,7 @@ public class GameManager : MonoBehaviour
         Hand.SetActive(false);
         introText.SetActive(false);
         targetObj.SetActive(false);
-        //Analytics.LogEvent(Analytics.EventType.EndCardShown);
+        Analytics.LogEvent(Analytics.EventType.EndCardShown);
         if (_curentCount >= maxCount)
         {
             EndGame();
@@ -157,18 +158,18 @@ public class GameManager : MonoBehaviour
     {
         _curentCount++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //Analytics.LogEvent(Analytics.EventType.LevelRetry);
-        GameStart();
+        Analytics.LogEvent(Analytics.EventType.LevelRetry);
+        StartCoroutine(GameStart());
     }
 
     public void EndGame()
     {
         //Uncomment these when Luna is installed
-        //Luna.Unity.Playable.InstallFullGame();
+        Luna.Unity.Playable.InstallFullGame();
         if (!_gameEnded)
         {
             //Uncomment these when Luna is installed
-            //Luna.Unity.LifeCycle.GameEnded();
+            Luna.Unity.LifeCycle.GameEnded();
             _gameEnded = true;
         }
     }
@@ -176,6 +177,6 @@ public class GameManager : MonoBehaviour
     public void InstallGame()
     {
         //Uncomment these when Luna is installed
-        //Luna.Unity.Playable.InstallFullGame();
+        Luna.Unity.Playable.InstallFullGame();
     }
 }

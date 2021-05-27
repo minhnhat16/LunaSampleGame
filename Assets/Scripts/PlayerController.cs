@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-//using Luna.Unity;
+using Luna.Unity;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -50,8 +50,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lastPosition = transform.position.y;
         maxHeight = lastPosition;
-        
-        GameManager.instance.GameStart();
+
+        StartCoroutine(GameManager.instance.GameStart());
     }
     
     void Update()
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y <= camera.transform.position.y - offScreen)
         {
             endGame();
-            //Analytics.LogEvent(Analytics.EventType.LevelFailed);
+            Analytics.LogEvent(Analytics.EventType.LevelFailed);
         }
 
         float curPos = transform.position.y - lastPosition;

@@ -1,4 +1,4 @@
-﻿//using Luna.Unity;
+﻿using Luna.Unity;
 using UnityEngine;
 
 public class Winner : MonoBehaviour
@@ -10,7 +10,7 @@ public class Winner : MonoBehaviour
         {
             GameManager.instance.endDescription.text = "You Win!";
             GameManager.instance.StartCoroutine("ShowEndCard");
-            //Analytics.LogEvent(Analytics.EventType.LevelWon);
+            Analytics.LogEvent(Analytics.EventType.LevelWon);
         }
     }
 }
