@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         lastPosition = transform.position.y;
         maxHeight = lastPosition;
         
-        GameManager.instance.GameStart();
+        StartCoroutine(GameManager.instance.GameStart());
     }
     
     void Update()
