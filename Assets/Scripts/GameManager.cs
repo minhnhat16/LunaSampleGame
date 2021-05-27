@@ -107,11 +107,12 @@ public class GameManager : MonoBehaviour
         retry.color = textColours;
     }
 
-    public void GameStart()
+    public IEnumerator GameStart()
     {
         player.SetActive(true);
         introText.SetActive(true);
         Hand.SetActive(true);
+        yield return null;
     }
 
     private void Update()
@@ -154,7 +155,7 @@ public class GameManager : MonoBehaviour
     {
         _curentCount++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        GameStart();
+        StartCoroutine(GameStart());
     }
 
     public void EndGame()
