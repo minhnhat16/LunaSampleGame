@@ -89,41 +89,40 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     void TouchInput()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
+        Vector3 inputPosition;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0) // Touch input
         {
-            hand.SetActive(false);
-            introText.SetActive(false);
-            
-            deltaX = mousePos.x - transform.position.x;
-            deltaY = mousePos.y - transform.position.y;
-            
-            isPressed = true;
+            Touch touch = Input.GetTouch(0);
+            inputPosition = Camera.main.ScreenToWorldPoint(touch.position);
+        }
+        else if (Input.GetMouseButtonDown(0)) // Mouse input
+        {
+            inputPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+        else
+        {
+            return; // Exit if no valid input
         }
 
-        if (Input.GetMouseButton(0) && isPressed)
-        {
-            rb.transform.position = new Vector2((mousePos.x - deltaX), transform.position.y);
-           
-            if (transform.position.x > 0.1)
-            {
-                ren.flipX = false;
-            }
-            else if (transform.position.x < -0.1)
-            {
-                ren.flipX = true;
-            }
-        }
+        inputPosition.z = 0;
 
-        if (Input.GetMouseButtonUp(0))
+        RaycastHit2D hit = Physics2D.Raycast(inputPosition, Vector2.zero);
+
+        if (hit.collider != null)
         {
-            isPressed = false;
+            Square square = hit.collider.GetComponent<Square>();
+
+            if (square != null && !square.isEmpty)
+            {
+                square.RevealTile();
+            }
         }
     }
+
 
     void ClampPositions()
     {

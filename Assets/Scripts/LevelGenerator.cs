@@ -17,19 +17,19 @@ public class LevelGenerator : MonoBehaviour
    
     void Start()
     {
-        Vector3 spawnPos = new Vector3(0, spawnHeight,0);
+        //Vector3 spawnPos = new Vector3(0, spawnHeight,0);
         
-        for (int i = 0; i < numberOfPlatform; i++)
-        {
-            spawnPos.y += Random.Range(minY, maxY);
-            spawnPos.x = Random.Range(-levelWidth, levelWidth);
-            Instantiate(platform, spawnPos, Quaternion.Euler(0,0,0));
-            if (i % division == 0)
-            {
-                spawnPos.y += 0.4f;
-                Instantiate(mushroom, spawnPos, Quaternion.Euler(0,0,0));
-            }
-        }
+        //for (int i = 0; i < numberOfPlatform; i++)
+        //{
+        //    spawnPos.y += Random.Range(minY, maxY);
+        //    spawnPos.x = Random.Range(-levelWidth, levelWidth);
+        //    Instantiate(platform, spawnPos, Quaternion.Euler(0,0,0));
+        //    if (i % division == 0)
+        //    {
+        //        spawnPos.y += 0.4f;
+        //        Instantiate(mushroom, spawnPos, Quaternion.Euler(0,0,0));
+        //    }
+        //}
         
     }
 }
